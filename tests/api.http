@@ -1,0 +1,33 @@
+POST {{api}}/rates
+Content-Type: application/json
+
+{
+  "date": "2010-04-15",
+  "codes": ["USD", "EUR"]
+}
+###
+
+POST {{api}}/save-preset
+Content-Type: application/json
+
+{
+  "codes": ["USD", "EUR"]
+}
+###
+
+POST {{api}}/rates
+Content-Type: application/json
+
+{
+  "date": "2021-04-15",
+  "preset": "5FWQX7AzgLLVmLHq"
+}
+###
+
+POST {{api}}/save-preset-comment
+Content-Type: application/json
+
+{
+  "preset": "5FWQX7AzgLLVmLHq",
+  "comment": "Основные валюты"
+}
