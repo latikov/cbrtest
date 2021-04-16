@@ -22,7 +22,7 @@ php artisan cbr:prepare-cache 2021-01-01
 ### Получение курса валют на определенный день
 
 ```json
-POST {{api}}/rates
+POST /api/rates
 Content-Type: application/json
 
 {
@@ -43,7 +43,7 @@ Content-Type: application/json
 ### Сохранение набора валют (пресета)
 
 ```json
-POST {{api}}/save-preset
+POST /api/save-preset
 Content-Type: application/json
 
 {
@@ -67,7 +67,7 @@ Content-Type: application/json
 ### Получение валют по пресету
 
 ```json
-POST {{api}}/rates
+POST /api/rates
 Content-Type: application/json
 
 {
@@ -88,7 +88,7 @@ Content-Type: application/json
 ### Сохранение комментария к пресету
 
 ```json
-POST {{api}}/save-preset-comment
+POST /api/save-preset-comment
 Content-Type: application/json
 
 {
