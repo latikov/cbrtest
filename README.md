@@ -17,9 +17,9 @@ php artisan migrate
 php artisan cbr:prepare-cache 2021-01-01
 ```
 
-#API
+# API
 
-###Получение курса валют на определенный день
+### Получение курса валют на определенный день
 
 ```json
 POST {{api}}/rates
@@ -40,7 +40,7 @@ Content-Type: application/json
 }
 ```
 
-###Сохранение набора валют (пресета)
+### Сохранение набора валют (пресета)
 
 ```json
 POST {{api}}/save-preset
@@ -64,7 +64,7 @@ Content-Type: application/json
 }
 ```
 
-###Получение валют по пресету
+### Получение валют по пресету
 
 ```json
 POST {{api}}/rates
@@ -85,7 +85,7 @@ Content-Type: application/json
 }
 ```
 
-###Сохранение комментария к пресету
+### Сохранение комментария к пресету
 
 ```json
 POST {{api}}/save-preset-comment
