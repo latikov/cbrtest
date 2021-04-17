@@ -54,7 +54,7 @@ class CbrRuService
         if($cbrCache){
             $rates = $cbrCache->rates;
         } else {
-            $rates = static::requestCbrRu($carbonDate);
+            $rates = $this->requestCbrRu($carbonDate);
             (new CbrCache([
                 'day' => $day,
                 'rates' => $rates
