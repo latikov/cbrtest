@@ -19,6 +19,8 @@ class CreatePresetsTable extends Migration
             $table->json('codes');
             $table->text('comment')->nullable();
             $table->timestamps();
+
+            $table->unique('key');
         });
     }
 
