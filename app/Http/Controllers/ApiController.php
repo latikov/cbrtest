@@ -15,6 +15,12 @@ use Illuminate\Support\Str;
 
 class ApiController extends Controller
 {
+    /**
+     * /api/rates
+     * @param RatesRequest $request
+     * @param CbrRuService $cbrRuService
+     * @return array
+     */
     public function rates(RatesRequest $request, CbrRuService $cbrRuService)
     {
         $day = $request->get('date');
@@ -22,7 +28,9 @@ class ApiController extends Controller
 
         $presetName = $request->get('preset');
         if($presetName){
-            $preset = Preset::query()->where('key', $presetName)->firstOrFail();
+            $preset = Preset::query()
+                ->where('key', $presetName)
+                ->firstOrFail();
             $requestCodes = $preset->codes;
         } else {
             $requestCodes = $request->get('codes');
@@ -46,6 +54,11 @@ class ApiController extends Controller
         ];
     }
 
+    /**
+     * /api/save-preset
+     * @param SavePresetRequest $request
+     * @return array
+     */
     public function savePreset(SavePresetRequest $request)
     {
         $requestCodes = $request->get('codes');
@@ -59,9 +72,16 @@ class ApiController extends Controller
         ];
     }
 
+    /**
+     * /api/save-preset-comment
+     * @param SavePresetCommentRequest $request
+     * @return array
+     */
     public function savePresetComment(SavePresetCommentRequest $request)
     {
-        $preset = Preset::query()->where('key',$request->get('preset'))->firstOrFail();
+        $preset = Preset::query()
+            ->where('key',$request->get('preset'))
+            ->firstOrFail();
         $preset->fill(
             $request->only(['comment'])
         )->save();

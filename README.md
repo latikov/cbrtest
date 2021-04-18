@@ -111,3 +111,13 @@ Content-Type: application/json
 ```
 
 В **tests/api.http** лежат заготовки для HTTP клиента PhpStorm.
+
+## Тесты
+
+Функциональные тесты лежат в **/tests/Feature/ApiTest.php**
+
+Запуск тестов:
+
+```shell
+php vendor/phpunit/phpunit/phpunit --configuration phpunit.xml
+```
